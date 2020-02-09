@@ -1,4 +1,4 @@
-{% set version = "0.1-5" %}
+{% set version = '0.1-5' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: trimcluster_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/trimcluster_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/trimcluster/trimcluster_{{ version }}.tar.gz
   sha256: 9239f20e4a06ac2fa89e5d5d89b23a45c8c534a7264d89bede8a35d43dda518b
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -36,16 +35,30 @@ test:
 
 about:
   home: http://www.homepages.ucl.ac.uk/~ucakche/
-  license: GPL
-  summary: Trimmed k-means clustering.
-  license_family: GPL
+  license: GPL-3
+  summary: Trimmed k-means clustering. The method is described in Cuesta-Albertos et al. (1997)
+    <doi:10.1214/aos/1031833664>.
+  license_family: GPL3
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+
+# Package: trimcluster
+# Title: Cluster Analysis with Trimming
+# Version: 0.1-5
+# Date: 2020-02-08
+# VersionNote: Released 0.1-2.1 on 2018-07-20 on CRAN
+# Author: Christian Hennig <chrish@stats.ucl.ac.uk>
+# Depends: R (>= 1.9.0)
+# Suggests: fpc
+# Description: Trimmed k-means clustering. The method is described in Cuesta-Albertos et al. (1997) <doi:10.1214/aos/1031833664>.
+# Maintainer: Valentin Todorov <valentin.todorov@chello.at>
+# License: GPL
+# URL: http://www.homepages.ucl.ac.uk/~ucakche/
+# Packaged: 2020-02-08 18:29:38 UTC; Share
+# Repository: CRAN
+# Date/Publication: 2020-02-09 12:10:02 UTC
+# NeedsCompilation: no
