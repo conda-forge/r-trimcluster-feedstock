@@ -1,4 +1,4 @@
-{% set version = "0.1-6" %}
+{% set version = "0.2-0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/trimcluster_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/trimcluster/trimcluster_{{ version }}.tar.gz
-  sha256: 4293e70a4b1c0f53f879be713d8a7a6ca629b4e34bf79ce26451e02bf1a9a9ae
+  sha256: d0592832430db5774c7cf5df3f7a1af9e1e3d5c0d2a8e334692c8fca331cb26e
 
 build:
   number: 0
