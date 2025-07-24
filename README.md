@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-trimcluster-f
 
 Home: http://www.homepages.ucl.ac.uk/~ucakche/
 
-Package license: GPL-3
+Package license: GPL-3.0-or-later
 
 Summary: Trimmed k-means clustering. The method is described in Cuesta-Albertos et al. (1997) <doi:10.1214/aos/1031833664>.
 
