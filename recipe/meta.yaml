@@ -21,10 +21,13 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-tclust
   run:
     - r-base
+    - r-tclust
 
 test:
   commands:
@@ -33,7 +36,7 @@ test:
 
 about:
   home: http://www.homepages.ucl.ac.uk/~ucakche/
-  license: GPL-3
+  license: GPL-3.0-or-later
   summary: Trimmed k-means clustering. The method is described in Cuesta-Albertos et al. (1997) <doi:10.1214/aos/1031833664>.
   license_family: GPL3
   license_file:
